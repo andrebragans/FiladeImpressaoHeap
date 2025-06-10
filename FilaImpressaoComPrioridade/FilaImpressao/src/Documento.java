@@ -4,12 +4,14 @@ public class Documento implements Comparable<Documento> {
     private String nome;
     private int prioridade; 
 
+    //Construtor da classe Documento
     public Documento(String nome, int prioridade) {
         this.nome = nome;
         this.prioridade = prioridade;
         this.ordemChegada = contadorGlobal++;
     }
 
+    // Métodos getters
     public int getPrioridade() {
         return prioridade;
     }
@@ -26,6 +28,7 @@ public class Documento implements Comparable<Documento> {
         return Integer.compare(this.ordemChegada, outro.ordemChegada);
     }
 
+    // Representação textual do documento (útil para exibir na GUI ou console)
     @Override
     public String toString() {
         String tipo = (prioridade == 1) ? "Urgente" : "Normal";
