@@ -1,20 +1,21 @@
 import java.util.*;
 
+// Classe que gerencia a fila de impressão utilizando heap de prioridade
 public class FilaImpressao {
-    // Fila de prioridade de documentos (ordena pelo menor valor de prioridade)
+    // Uso do heap: PriorityQueue é uma implementação de heap (min-heap por padrão)
     private PriorityQueue<Documento> fila;
 
+    // Construtor inicializa o heap com comparador baseado na prioridade do documento
     public FilaImpressao() {
-        // Construtor inicializa a fila com comparador de prioridade
         fila = new PriorityQueue<>();
     }
-    // Adiciona um novo documento à fila
+    // Adiciona documento à fila (inserção no heap)
     public void adicionarDocumento(String nome, int prioridade) {
-        fila.offer(new Documento(nome, prioridade));
+        fila.offer(new Documento(nome, prioridade)); // O heap se reorganiza automaticamente
     }
     // Remove e retorna o próximo documento a ser impresso
     public Documento imprimirProximo() {
-        return fila.poll();
+        return fila.poll();  // Remove o topo do heap
     }
 
     public String visualizarFilaFormatada() {
