@@ -49,7 +49,7 @@ public class MainGUI {
                     if (!nome.isEmpty()) {
                         fila.adicionarDocumento(nome, prioridade);  // Adiciona o documento à fila (inserção no heap de prioridade)
                         try {
-                            StyledDocument doc = outputArea.getStyledDocument();  // Estilos diferentes para documentos urgentes e normais
+                            StyledDocument doc = outputArea.getStyledDocument();  
                             Style normal = outputArea.addStyle("Normal", null);
                             StyleConstants.setForeground(normal, Color.BLACK);
                             doc.insertString(doc.getLength(), "📥 Documento adicionado: " + nome + "\n", normal);
@@ -62,9 +62,10 @@ public class MainGUI {
                 }
             });
 
+            // Listener do botão "Visualizar Fila"
             btnVisualizar.addActionListener(e -> {
-                outputArea.setText("");
-                StyledDocument doc = outputArea.getStyledDocument();
+                outputArea.setText(""); 
+                StyledDocument doc = outputArea.getStyledDocument();  // Estilos diferentes para documentos urgentes e normais
                 Style estiloUrgente = outputArea.addStyle("Urgente", null);
                 StyleConstants.setForeground(estiloUrgente, Color.RED);
                 Style estiloNormal = outputArea.addStyle("Normal", null);
