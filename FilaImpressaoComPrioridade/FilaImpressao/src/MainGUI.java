@@ -3,7 +3,7 @@ import javax.swing.text.*;
 import java.awt.*;
 
 public class MainGUI {
-    private static FilaImpressao fila = new FilaImpressao();
+    private static FilaImpressao fila = new FilaImpressao();  // Criação da fila de impressão
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
